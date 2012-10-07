@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width'>
+
+        <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Numans'>
+        <link rel='stylesheet' type='text/css' href='style.css'>
+
+        <title>fastKey | Fires keyevents much faster!</title>
+    </head>
+
+    <body class='body'>
+        <h1 class='logo'>fastKey</h1>
+
+        <div>
+            <h2>Something about</h2>
+            <p>Pressing a key on your keyboard fires the event in most browsers with a short delay. FastKey is the approach for exactly this inconvenience.</p>
+            <p>It is based upon jQuery and written to be small and nevertheless useful.</p>
+        </div>
+
+        <div>
+            <h3>How to use</h3>
+            <p>It is quite simple!</p>
+
+            <p><span>1st</span> Include jQuery and the plugin:</p>
+            <pre><code>&lt;script src=&#39;jQuery.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;jQuery.fastKey.js&#39;&gt;&lt;/script&gt;</code></pre>
+
+            <p><span>2nd</span> Initialize the plugin with your key and function:</p>
+<pre><code>$.fastKey('your key', function() {
+    // your function
+});</code></pre>
+
+            <p><span>3rd</span> Fire your <i>key</i>-event fast!</p>
+        </div>
+
+        <div>
+            <h3>Example</h3>
+            <p>Scroll this page up or down with your arrow keys...</p>
+            <p>Nice, eh?! Ok, now <a href='#' class='disable'><span>disable</span></a> the plugin, and try again.</p>
+<pre><code>// Up-Key
+$.fastKey("38", function() {
+    $('html,body').animate({scrollTop: "-=10"}, 0);
+});
+
+// Down-Key
+$.fastKey("40", function() {
+    $('html,body').animate({scrollTop: "+=10"}, 0);
+});</code></pre>
+        </div>
+
+        <div>
+            <h3>Download</h3>
+            <p>
+                Get the <a href='https://raw.github.com/yckart/fastKey/master/jQuery.fastKey.js'>raw</a> script, download the complete <a href='https://github.com/yckart/fastKey/zipball/master'>package</a> or fork it on <a href='https://github.com/yckart/fastKey/'>GitHub</a>.
+            </p>
+        </div>
+
+        <div>
+            <h3>Support</h3>
+            <p>
+                <a href='http://twitter.com/yckart'>@yckart</a> #fastkey<br>
+                <a href='http://yckart.com/'>http://yckart.com</a>
+            </p>
+
+            <h4>License</h4>
+            <tt>
+                <p>Copyright (c) 2012 Yannick Albert (<a href='http://yckart.com/'>http://yckart.com/</a>)</p>
+
+                <p>Permission is hereby granted, free of charge, to any person obtaining a copy
+                of this software and associated documentation files (the "Software"), to deal
+                in the Software without restriction, including without limitation the rights
+                to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+                copies of the Software, and to permit persons to whom the Software is
+                furnished to do so, subject to the following conditions:</p>
+
+                <p>The above copyright notice and this permission notice shall be included in
+                all copies or substantial portions of the Software.</p>
+
+                <p>THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+                IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+                FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+                AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+                LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+                OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+                THE SOFTWARE.</p>
+            </tt>
+        </div>
+
+        <script src='http://code.jquery.com/jquery-1.8.2.min.js'></script>
+        <script src='jQuery.fastKey.js'></script>
+        <script class='example'>
+            // Up-Key
+            $.fastKey("38", function() {
+                $('.body').animate({scrollTop: "-=10"}, 0);
+            });
+
+            // Down-Key
+            $.fastKey("40", function() {
+                $('.body').animate({scrollTop: "+=10"}, 0);
+            });
+
+            $(".disable").click(function(e){
+                $(document).off("keydown");
+                e.target.innerHTML = "disabled";
+                return false;
+            });
+        </script>
+    </body>
+</html>
