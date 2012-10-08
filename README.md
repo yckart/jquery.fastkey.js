@@ -22,9 +22,15 @@ It is quite simple!
 
 **3rd** Fire your key-event fast!
 
+##Options
+There're some options available:
+
+- `interval` Sets the iteration interval (default: 10)
+- `preventDefault` - Prevents the default browser behavior (default: 10)
+
 #Example
 
-Take a look at [https://yckart.github.com/fastKey/][1]
+Take a look at [http://yckart.github.com/jQuery.fastKey.js/][1]
 
 
 #Support

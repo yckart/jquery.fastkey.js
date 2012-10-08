@@ -10,7 +10,7 @@
         <title>fastKey | Fires keyevents much faster!</title>
     </head>
 
-    <body class='body'>
+    <body>
         <h1 class='logo'>fastKey</h1>
 
         <div>
@@ -90,15 +90,15 @@ $.fastKey("40", function() {
 
         <script src='http://code.jquery.com/jquery-1.8.2.min.js'></script>
         <script src='jQuery.fastKey.js'></script>
-        <script class='example'>
+        <script>
             // Up-Key
             $.fastKey("38", function() {
-                $('.body').animate({scrollTop: "-=10"}, 0);
+                $('html,body').animate({scrollTop: "-=10"}, 0);
             });
 
             // Down-Key
             $.fastKey("40", function() {
-                $('.body').animate({scrollTop: "+=10"}, 0);
+                $('html,body').animate({scrollTop: "+=10"}, 0);
             });
 
             $(".disable").click(function(e){
